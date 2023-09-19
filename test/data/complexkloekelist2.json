@@ -1,0 +1,31 @@
+{
+"data": [
+            {   
+                "offset" : 1,
+                "name" : "set 1",
+                "symbol" : "triangle",
+                "color" : "salmon",
+                "kloekecodes" : ["B064b","B064p","B114p","C026p","C045p","C063a","C071p"]
+            },
+            {   
+                "offset" : 2,
+                "name" : "set 2",
+                "symbol" : "star",
+                "postalcodes" : ["1200","3500","8400"]
+            },
+            {   
+                "offset" : 3,
+                "name" : "set 3",
+                "symbol" : "square",
+                "outlinedcolor" : ["yellow", "black"],
+                "size" : 7000,
+                "kloekecodes" : ["K192p","K209p","K211p"],
+                "link" : "http://www.example.com/script.php?kloeke_code=%s",
+                "target" : "_blank",
+                "onclick" : "alert('%s');",
+                "onmouseover" : "alert('%s');",
+                "onmouseout" : "alert('%s');"
+            }
+
+        ]
+}

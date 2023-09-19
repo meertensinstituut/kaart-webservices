@@ -1,0 +1,14 @@
+version: '2'
+services: 
+  kaart:
+    image: alpine-kaart
+#    image: registry.diginfra.net/meertens/php81-kaartmodule
+    build:
+      context: ./docker
+    ports:
+      - "8088:80"
+    volumes:
+      - ./:/htdocs
+#      - ./:/var/www/html
+    environment:
+      TZ: "Europe/Amsterdam"

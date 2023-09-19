@@ -1,0 +1,7 @@
+<phpunit bootstrap="testconfig_local.inc.php">
+    <testsuites>
+      <testsuite name="local_rest_services">
+        <file>KaartRESTTest.php</file>
+      </testsuite>
+    </testsuites>
+</phpunit>

@@ -1,0 +1,16 @@
+{
+  "name": "meertensinstituut/kaart-webservices",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/meertensinstituut/kaart"
+    }
+  ],
+  "require": {
+    "meertensinstituut/kaart": "dev-main",
+    "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "10.2.5"
+  }
+}

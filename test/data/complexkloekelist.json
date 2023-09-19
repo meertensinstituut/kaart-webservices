@@ -1,0 +1,17 @@
+{
+"data": [
+            {   
+                "offset" : 1,
+                "name" : "set 1",
+                "symbol" : "triangle",
+                "color" : "salmon",
+                "kloekecodes" : ["B064b","B064p","B114p","C026p","C045p","C063a","C071p"]
+            },
+            {   
+                "offset" : 2,
+                "name" : "set 2",
+                "symbol" : "star",
+                "kloekecodes" : ["K192p","K209p","K211p"]
+            }
+        ]
+}

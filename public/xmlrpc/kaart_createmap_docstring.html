@@ -1,0 +1,90 @@
+<p>Parameter 1 (string): format of the map. One of <i>svg</i>, <i>gif</i>, <i>jpeg</i>, <i>png</i>, <i>kml</i> or <i>json</i>.</p>
+<p>Parameter 2 (array)</p>
+<ul> 
+  <li> option 1 (simple map). Two possibilities, depending on the <b>type</b> of map (either <i>dutchlanguagearea</i>, <i>municipalities</i>, <i>corop</i> or <i>provinces</i>, as given in Parameter 3). <ol><li>With type <i>dutchlanguagearea</i>, to display one series of Kloeke codes: an array with Kloeke-codes or four-digit postal codes (strings). <b style="color: red;">Note</b>: Kloeke-codes and postal codes cannot be used both within the same series. Kloekecodes example:
+  <pre><code><span style="color: #0000CC;">&lt;array</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;data</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;value</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;string</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">E017p</span><span style="color: #0000CC;">&lt;/string&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/value&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;value</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;string</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">E031a</span><span style="color: #0000CC;">&lt;/string&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/value&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/data&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000CC;">&lt;/array&gt;</span><span style="color: #000000;">
+</span></code></pre>
+Postal codes example:
+<pre><code><span style="color: #0000CC;">&lt;array</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;data</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;value</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;string</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">1053</span><span style="color: #0000CC;">&lt;/string&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/value&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;value</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;string</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">3503</span><span style="color: #0000CC;">&lt;/string&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/value&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/data&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000CC;">&lt;/array&gt;</span><span style="color: #000000;">
+</span></code></pre>
+  </li>
+  <li>With type <i>municipalities</i>, <i>corop</i> or <i>provinces</i>: a struct with area codes as the keys and color codes (for highlighting) as the values. Example:
+  <pre><code><span style="color: #0000CC;">&lt;struct</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;member</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;name</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">g_0534</span><span style="color: #0000CC;">&lt;/name&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;value</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;string</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">#FFC513</span><span style="color: #0000CC;">&lt;/string&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/value&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/member&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;member</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;name</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">g_0003</span><span style="color: #0000CC;">&lt;/name&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;value</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;string</span><span style="color: #0000CC;">&gt;</span><span style="color: #000000;">#FFEEAA</span><span style="color: #0000CC;">&lt;/string&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/value&gt;</span><span style="color: #000000;">
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000CC;">&lt;/member&gt;</span><span style="color: #000000;">
+</span><span style="color: #0000CC;">&lt;/struct&gt;</span><span style="color: #000000;">
+</span></code></pre>
+  </li></ol> 
+  If you want an empty basemap, use an empty struct as the second parameter.
+  </li>
+  <li> option 2 (complex map, more than one series of Kloeke-codes displayed): an array of structs.<br />
+	Required members of every struct: 
+	<ul> 
+	  <li> <b>offset</b> (int) index number of the series)</li>
+	  <li> One of <b>kloekecodes</b> (array) array of strings, Kloeke-codes of the series) or <b>postalcodes</b> (array) array of strings, four-digit postal codes. Series with Kloeke-codes and series with postal codes can be used in the same map (but within one series only one of the two can be used). </li>
+	</ul>
+	Optional members of every struct: 
+	<ul> 
+	  <li> <b>name</b> (string) name of the series, gets displayed in the legend; if not provided, a default name of "series &lt;offset&gt;" is generated.</li>
+	  <li> <b>series</b> (int), the index number of the parent collection of the current series of Kloeke-codes. Meant to combine different maps. Each parent collection has a different symbol, the child series within them differ only in color.</li>
+	  <li> <b>symbol</b>: (string) which symbol should be used to draw the current series. For SVG- or bitmap maps one of <i>square</i>, <i>circle</i>, <i>triangle</i>, <i>bar_horizontal</i>, <i>bar_vertical</i>, <i>line_horizontal</i>, <i>line_vertical</i>, <i>slash_left</i>, <i>slash_right</i>, <i>plus</i> or <i>star</i>; for KML maps either one of the previous symbols, or a valid URL. If left empty, a default symbol is used.</li>
+	  <li> <b>color</b>: (string) the color with which the symbol of the current series should be drawn. Either the name of a color (one of the 140 HTML colors), or a hexadecimal representation of the form <i>#RRGGBB</i>, or or a hexadecimal representation of the form <i>AABBGGRR</i>. The 'AA' (opacity) part only has an effect with KML maps. </li>
+	  <li> <b>outlinedcolor</b>: (array) array with two colors (strings), respectively fill and outline, with which the symbol of the current series should be drawn. The second color (outline) has no effect with KML maps. <i>outlinedcolor</i> can be used with all symbols, but really only makes sense with <i>square</i>, <i>circle</i>, <i>triangle</i>, <i>bar_horizontal</i>, <i>bar_vertical</i>, or <i>star</i>. Colors can be either the name of a color (one of the 140 HTML colors), or a hexadecimal representation of the form <i>#RRGGBB</i>, or or a hexadecimal representation of the form <i>AABBGGRR</i>. The 'AA' (opacity) part only has an effect with KML maps.  </li>
+	  <li> <b>size</b>: (string) size of the symbol of the current series. For SVG or bitmap maps the default symbol size is 5000, for KML maps it is 0.6. The sizes are converted into each other internally: if size 0.6 is requested and the requested map format is SVG or a bitmap the symbols get size 5000, and vice versa.<br />If <b>size</b> is smaller than 100 it is assumed that a size at the scale of KML-maps is meant; if <b>size</b> is larger than 100 it is assumed that a size at the scale of SVG is meant.</li>
+	  <li> <b>link</b>: (string) provides placemarks with a clickable link. Example: <tt>http://www.example.com/script.php?kloeke_code=%s</tt>. Any <b>%s</b> placeholders will be automatically replaced with the Kloeke code of the placemark.</li>
+	  <li> <b>target</b>: (string) provides a target for links. Only has an effect when <b>link</b> exists.</li>
+	  <li> <b>onclick</b>: (string) JavaScript code for "onclick" event on placemarks. Any <b>%s</b> placeholders will be automatically replaced with the Kloeke code of the placemark.</li>
+	  <li> <b>onmouseover</b>: (string) JavaScript code for "onmouseover" event on placemarks. Any <b>%s</b> placeholders will be automatically replaced with the Kloeke code of the placemark. <b style="color: red;">Note</b> (SVG maps only): if <b>interactive</b> is TRUE, the onmouseover and onmouseout events are already taken.</li>
+	  <li> <b>onmouseout</b>: (string) JavaScript code for "onmouseout" event on placemarks. Any <b>%s</b> placeholders will be automatically replaced with the Kloeke code of the placemark. <b style="color: red;">Note</b> (SVG maps only): if <b>interactive</b> is TRUE, the onmouseover and onmouseout events are already taken.<br />
+	  <b style="color: red;">Note</b>: <b>link</b>, <b>target</b>,  <b>onclick</b>, <b>onmouseover</b> and <b>onmouseout</b> only have a direct effect on SVG maps. If you want to add these features to bitmap maps, you need both a bitmap picture and a list of HTML &lt;area&gt; elements. See below for the <b>imagemap</b> parameter.</li>
+	</ul>
+  </li>
+</ul>
+<p> Parameter 3 (optional): a struct with parameters about the map as a whole. Possible members: </p>
+<ul> 
+  <li><b>additionaldata</b>: (array) Used to add an additional layer of data to a map. Currently only <i>provinces</i> or <i>corop</i> can be added to a map of type <i>municipalities</i> and <i>daan_blok_1969</i> to a map of type <i>dutchlanguagearea</i>. The latter is synonymous to setting the <b>background</b> to <i>daan_blok_1969</i>.</li>
+  <li><b>altitudedifference</b> (int) the difference (in meters above the earth surface) in height between different series. Only has an effect on KML maps. Default: <i>50</i>. Only possible with map type dutchlanguagearea.</li>
+  <li><b>background</b>: (string) Background to be drawn between base map and placemarks. Currently only the value <i>daan_blok_1969</i> is allowed. Only possible with map type dutchlanguagearea.</li>
+  <li><b>imagemap</b>: (boolean) Whether the return value should be an array containing, after the base_64 encoded map, a string with HTML &lt;area&gt; elements for the placemarks. <b>link</b>, <b>target</b>, <b>onclick</b>, <b>onmouseover</b> and <b>onmouseout</b> attributes, if defined, (see above) will be included. This can be used to add interactivity to bitmap maps.</li>
+  <li><b>interactive</b>: (boolean) Whether symbols on the map should show placename and Kloeke code "onmouseover". This only has a direct effect on SVG maps. If you want to add this feature to bitmap maps, you need both a bitmap picture and a list of HTML &lt;area&gt; elements. See below for the <b>imagemap</b> parameter.</li>
+  <li><b>link</b>: (string) Template for a link to be added to placemark or municipalities. %s placeholders will be replaced by either the Kloeke code or the municipality code. For maps of a bitmap format, the links will be added to the imagemap of the picture, for maps of format SVG or KML they will be embedded in the XML. (link = urlencoded form of http://www.example.com/?code=%s). Note: when using placemarks, this only works if there is just one series. If you have more than one series of placemarks, the link parameter should go into the data object, see the example under data above. Applies to all municipalities of a map of type <i>municipalities</i> unless the parameter <b>linkhighlightedonly</b> is set to true.</li>
+  <li><b>linkhighlightedonly</b>: (boolean) Only for maps of type <i>municipalities</i>. If this parameter is set to <i>true</i>, a link set with the <b>link</b> parameter is only added to higlighted municipalities.</li>
+  <li><b>maptype</b>: (string) <i>standard</i> (default) or <i>frequency</i>. <i>Frequency</i> means that a placemark (Kloeke code) which occurs twice is now drawn twice as big, three times becomes three times as big, etc. <b style="color: red;">Note</b>: this does not work yet for KML maps. Only possible with map type dutchlanguagearea.</li>
+  <li><b>parts</b>: (array) an array of strings containing parts of the map which should be drawn. See the output of <b>kaart.getpossibleparts</b> for the list of possibilities. If this member is not present the complete map is drawn. Only possible with map type dutchlanguagearea.</li>
+  <li><b>pixelwidth</b> or <b>width</b>: (int) width of the map in pixels. The height is automatically 0.9 times the width.</li>
+  <li><b>removeduplicates</b> (boolean) Whether duplicates within the same series of Kloeke codes should be removed or not. Default: <i>false</i>. Only possible with map type dutchlanguagearea.</li>
+  <li><b>showcombinations</b>: (boolean) Only useful for maps of map type dutchlanguagearea. If this parameter is set to true, counts of overlapping placemarks between different series will be shown in the legend.</li>
+  <li><b>title</b>: (string) title of the map.</li>
+  <li><b>type</b>: (string) <i>dutchlanguagearea</i> (default) or <i>municipalities</i>/<i>gemeentes</i> (synonyms) or <i>corop</i> or <i>provincies</i>/<i>provinces</i> (synonyms)</li>
+
+</ul>
+<p> <b style="color: red;">NOTE</b>. If postal codes are used, those are translated internally to Kloeke codes (the Kloeke codes which contain the postal codes). This means that the map does not get more detailed if the input is postal codes!</p>
+<p> Return value: base64-encoded map in the requested format, or: array containing base64-encoded map and string with HTML &lt;area&gt; elements for use in &lt;map&gt; element. </p>

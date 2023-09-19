@@ -1,0 +1,7 @@
+<phpunit bootstrap="testconfig_local.inc.php">
+    <testsuites>
+      <testsuite name="local_xml-rpc_services">
+        <file>KaartXMLRPCTest.php</file>
+      </testsuite>
+    </testsuites>
+</phpunit>
