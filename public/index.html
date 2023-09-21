@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="nl">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="kaart.css" type="text/css"/>
+	<title>Kloekecodes afbeelden</title> <script src="kaart.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="header">
+	<p><a href="/">Meertens Instituut</a><span class="arrow"> &rarr; </span> <a href="./">Kaart</a</p>
+</div>
+<div id="wrap">
+	<div id="roderand">
+		<div id="header">
+			<ul id="menu">
+<!--				<li><img src="img/indent1.png" width="9" height="9" alt="&gt;"> <a href="../kloeke/">Kloekecodes opzoeken</a></li>-->
+				<li><img src="img/indent1.png" width="9" height="9" alt="&gt;"> <a href="xmlrpc/">XML-RPC interface</a></li>
+				<li><img src="img/indent1.png" width="9" height="9" alt="&gt;"> <a href="rest/">REST interface</a></li>
+<!--				<li><img src="img/indent1.png" width="9" height="9" alt="&gt;"> <a href="downloads.html">Downloads</a></li>-->
+			</ul>
+			<h1>Kloekecodes afbeelden</h1>
+		</div>
+		<div id="left">
+				<div>
+					<table id="kaartcontrole">
+						<tr>
+							<td align="left">
+								<a onclick="newkloekelijst();" href="#">voeg lijst Kloekecodes toe</a>
+							</td>
+							<td align="right">
+								<input type="checkbox" value="1" id="frequency" /> frequentiekaart
+								<button id="kaartbutton" onclick="sendRequest();">Teken kaart</button>
+								<input type="text" size="3" value="500" id="mapsize"> pix
+							</td>
+						</tr>
+					</table>
+	<!-- er mag geen whitespace in de div hieronder staan anders werkt de Javascript niet meer -->
+			<div id="kloekelijstcontainer"><table class="kloekelijst" id="kloekelijst"><tr><td rowspan="2" valign="top"><span>Kloekelijst 1</span><br><textarea id="kloekes[0]" rows="5" cols="7"></textarea></td><td valign="top" align="center" class="legenda"><span>Legenda </span><input type="text" id="legenda[0]" size="15"></td></tr><tr class="bottom"><td align="center" valign="bottom">symbool<br><br><img alt="square" src="img/square.png" height="15" width="15" id="square_blue[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);" style="border-bottom: medium double gray;"><img alt="circle" src="img/circle.png" height="13" width="13" id="circle_red[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="triangle" src="img/triangle.png" height="15" width="15" id="triangle_lime[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="horizontal_bar" src="img/bar_horizontal.png" height="9" width="15" id="bar_horizontal_yellow[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="vertical_bar" src="img/bar_vertical.png" height="15" width="9" id="bar_vertical_white[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="horizontal_line" src="img/line_horizontal.png" height="10" width="17" id="line_horizontal_black[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="vertical_line" src="img/line_vertical.png" height="17" width="10" id="line_vertical_black[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="left_slash" src="img/slash_left.png" height="18" width="17" id="slash_left_black[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="right_slash" src="img/slash_right.png" height="18" width="17" id="slash_right_black[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="plus" src="img/plus.png" height="17" width="17" id="plus_black[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"><img alt="star" src="img/star.png" height="16" width="17" id="star_red[0]" onclick="setImage(this);" onmouseover="setBorder(this);" onmouseout="removeBorder(this);"></td></tr></table></div></div>
+		<input type="hidden" id="symbol[0]" value="square_blue">
+		</div>
+		<div id="right">
+			<h2>Kaart</h2> 
+			<div id="kaart"><p>Voer hiernaast &eacute;&eacute;n of meer lijsten Kloekecodes in, gescheiden door nieuwe regels of komma's, en klik op "Teken kaart". Pas eventueel het formaat van de kaart (breedte in pixels) aan.</p>
+			<p>Voorbeeld van Kloekecodes:<br /><br />
+			<textarea rows="20" cols="15">
+B007p
+B020p
+B023p
+B045p
+B056p
+B064b
+B064p
+B114p
+C026p
+C045p
+C063a
+C071p
+C081p
+C131a
+C131p
+C151p
+C164p
+C199p
+D001p
+E026p
+E031p
+E038p
+E041p
+E056p
+E060p
+E064p
+E068a
+E075p
+E085p
+E093p
+E167p
+E220p
+F036b
+F112c
+F143p
+F144b
+F144j
+F170p
+F180p
+F206a
+G013p
+G033p
+G078b
+G078p
+G141p
+G201p
+G223p
+G234p
+G285p
+I009p
+I017p
+I048p
+I071p
+I077p
+I081p
+I085p
+I089p
+I138d
+K040p
+K066p
+K084p
+K094p
+K096p
+K143p
+K183p
+K185p
+K194p
+L036p
+L039p
+L070a
+L177p
+L183a
+L200p
+L208a
+L237p
+L250p
+L271p
+L290p
+L331p
+L375p
+L382p
+L383p
+M001p
+M006p
+M015p
+Q021p
+Q031p
+Q101p
+Q197p
+Q198b
+Q199p
+</textarea>
+			</p></div>
+		</div>
+		<div id="footer">
+			<address>
+				<span><strong>MEERTENS INSTITUUT</strong> Postbus 10855, 1001 EW Amsterdam. Telefoon +31 (0)20 4628500.</span> <a href="mailto:info@meertens.knaw.nl">info@meertens.knaw.nl</a>
+			</address>
+		</div>
+	</div>
+<!-- roderand -->
+</div>
+<!-- wrap -->
+</body>
+</html>

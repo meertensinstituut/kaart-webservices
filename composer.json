@@ -7,7 +7,7 @@
     }
   ],
   "require": {
-    "meertensinstituut/kaart": "dev-main",
+    "meertensinstituut/kaart": "v3.1.0",
     "ext-curl": "*"
   },
   "require-dev": {

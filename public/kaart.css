@@ -1,0 +1,213 @@
+/* CSS is a modified version of http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/finished.html */
+body, html
+{
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: #000;
+}
+
+body
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+a
+{
+  color: #CC0000;
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6
+{
+  color: #006666;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+div.header
+{
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: black;
+  width: 100%;
+  clear: both;
+  height: 20px;
+}
+
+.header a { color: white;}
+
+.header p
+{
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+h1
+{
+  padding: 5px 5px 5px 10px;
+  margin: 0;
+}
+
+.header p { color: white; }
+
+#wrap
+{
+  border-style: solid;
+  border-width: 10px;
+  border-color: black;
+  border-bottom-width: 0px;
+  background: white;
+}
+
+#roderand
+{
+  margin: 0;
+  padding: 0;
+  border: 1px solid #C00;
+}
+
+#header
+{
+  background: white;
+  margin-bottom: 10px;
+  /* 	insipide CSS hack om verdwijnende tekst in IE6 op te lossen.
+        Zie http://www.webcredible.co.uk/user-friendly-resources/css/internet-explorer.shtml
+        3. Disappearing background images */
+  position: relative;
+}
+
+#left
+{
+  background: white;
+  float: left;
+  width: 40%;
+  	/* zie: http://www.dustindiaz.com/min-height-fast-hack */
+	min-height: 600px;
+	height: auto !important;
+	height: 600px;
+}
+
+#left div
+{
+  padding-left: 10px;
+  margin-top: 0;
+}
+
+ul#menu
+{
+  margin-top: 2px;
+  margin-left: 0; /* anders staat hij in IE te ver naar rechts */
+  padding-left: 10px;
+}
+
+ul#menu li
+{
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+table.kloekelijst
+{
+  border-bottom: 1px dotted black;
+  margin-bottom: 5px;
+}
+
+table.kloekelijst { font-size: 95%; }
+
+table.kloekelijst tr td img
+{
+  margin-right: 1px;
+  padding: 2px 2px 2px 2px;
+}
+
+table.kloekelijst span
+{
+  vertical-align: top;
+  margin-right: 2px;
+}
+
+td.legenda { width:80%; }
+
+#right
+{
+  background: white;
+  float: right;
+  width: 59%;
+  border-left: 1px solid #c00;
+}
+
+#right h2
+{
+  padding: 0 0 0 10px;
+  margin-top: 0;
+}
+
+#kaart p
+{
+  padding: 0 0 0 10px;
+  margin-top: 20px;
+}
+
+#footer
+{
+  background: #c00;
+  white-space: nowrap;
+  color: white;
+  clear: both;
+  margin-top: 10px;
+}
+
+address
+{
+  font-style: normal;
+  font-size: 9px;
+  padding: 5px;
+  margin: 0;
+}
+
+address span
+{
+  padding-right: 5%;
+  /* om witruimte links naast emailadres te krijgen */
+}
+
+address a, address a:visited, address a:link
+{
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+address a:hover { text-decoration: underline; }
+
+#kaartcontrole
+{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#kaartcontrole td
+{
+  font-size: 95%;
+}
+
+#kaart
+{
+  width: 100%;
+  height: 600px;
+}
+
+#mapsize
+{
+  margin-left: 15px;
+}
+
+#kaartbutton { font-size: 95%; }
