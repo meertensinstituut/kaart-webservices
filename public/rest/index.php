@@ -98,7 +98,7 @@ if (isset($parameters['pathsfile'])) {
 
 if (! isset($parameters['data'])) { $parameters['data'] = array(); }
 
-Meertens\Kaart\REST\WebService::createMap($kaart, $parameters['type'], $parameters['data'], $parameters);
+Meertens\Kaart\REST\Webservice::createMap($kaart, $parameters['type'], $parameters['data'], $parameters);
 
 if (isset($parameters['imagemap'])) {
     // so that imagemap=1 returns a partial imagemap when links and/or tooltips are set and interactive is not set
