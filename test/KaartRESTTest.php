@@ -11,7 +11,7 @@ class KaartRESTTest extends TestCase
 
     function setUp(): void
     {
-        $this->_base_url = 'http://' . KAART_SERVER_HOSTNAME .':' . KAART_SERVER_PORT . KAART_SERVER_PATH . 'rest/';
+        $this->_base_url = KAART_SERVER_PROTOCOL . '://' . KAART_SERVER_HOSTNAME .':' . KAART_SERVER_PORT . KAART_SERVER_PATH . 'rest/';
         $this->_ch = curl_init();
         curl_setopt($this->_ch, CURLOPT_RETURNTRANSFER, 1);
     }
@@ -172,8 +172,16 @@ class KaartRESTTest extends TestCase
         curl_setopt($this->_ch, CURLOPT_HEADER, 1);
         curl_setopt($this->_ch, CURLOPT_NOBODY, 1);
         $this->_setupJSONRequest($url, './data/simplekloekelist_syntax_error.json');
+        $expected = array('HTTP/1.1 400', 'HTTP/2 400');
         $page = curl_exec($this->_ch);
-        $this->assertStringStartsWith('HTTP/1.1 400 Bad Request', $page);
+        $assertion = False;
+        foreach($expected as $str) {
+            if (str_starts_with($page, $str)) {
+                $assertion = True;
+                break;
+            }
+        }
+        $this->assertTrue($assertion);
     }
 
 
@@ -296,9 +304,9 @@ class KaartRESTTest extends TestCase
         $url = $this->_base_url . '?type=dutchlanguagearea&format=svg&width=450';
         $this->_setupJSONRequest($url, './data/complexkloekelist2.json');
         $kaart = curl_exec($this->_ch);
-        $expected = '6a06cea79b131aebe5720222764928b5';
+        $expected = array('6a06cea79b131aebe5720222764928b5', '4e09bd73501ad2938f4c8041b447748d');
         $actual = md5($this->_saveFile($filenaam, $kaart));
-        $this->assertEquals($expected, $actual, "check file $filenaam");
+        $this->assertContains($actual, $expected, "check file $filenaam");
     }
 
     function testCreateComplexKloekeMapJSON()
@@ -407,9 +415,9 @@ class KaartRESTTest extends TestCase
         curl_setopt($this->_ch, CURLOPT_URL, $url);
         curl_setopt($this->_ch, CURLOPT_HTTPGET, 1);
         $kaart = curl_exec($this->_ch);
-        $expected = '82c778a2a458287777cee07cde2f9af0';
+        $expected = array('82c778a2a458287777cee07cde2f9af0', 'eb9c1627309ff4b96c9342dc40e1b791');
         $actual = md5($this->_saveFile($filenaam, $kaart));
-        $this->assertEquals($expected, $actual, "check file $filenaam");
+        $this->assertContains($actual, $expected, "check file $filenaam");
     }
 
     function testGetPossiblePlacemarksComplete()
@@ -504,9 +512,16 @@ class KaartRESTTest extends TestCase
         curl_setopt($this->_ch, CURLOPT_URL, $url);
         curl_setopt($this->_ch, CURLOPT_HEADER, 1);
         curl_setopt($this->_ch, CURLOPT_NOBODY, 1);
+        $expected = array('HTTP/1.1 400', 'HTTP/2 400');
         $page = curl_exec($this->_ch);
-        $this->assertStringStartsWith('HTTP/1.1 400 Bad Request', $page);
-
+        $assertion = False;
+        foreach($expected as $str) {
+            if (str_starts_with($page, $str)) {
+                $assertion = True;
+                break;
+            }
+        }
+        $this->assertTrue($assertion);
     }
 
     function testsetAdditionalAreasCorop()

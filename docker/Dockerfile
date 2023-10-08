@@ -23,6 +23,7 @@ RUN apk --no-cache --update \
 
 EXPOSE 80
 
+COPY ./php.ini /etc/php81/php.ini
 ADD docker-entrypoint.sh /
 RUN chmod 0755 /docker-entrypoint.sh
 

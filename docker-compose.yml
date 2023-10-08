@@ -1,20 +1,17 @@
 version: '2'
 services: 
   kaart:
-    image: registry.diginfra.net/meertens/kaart:v3.1.1
-#    image: registry.diginfra.net/meertens/php81-kaartmodule
     build:
       context: ./docker
     ports:
       - "8088:80"
-#    volumes:
-#      - ./:/htdocs
-#      - ./:/var/www/html
+    volumes:
+      - ./:/htdocs
     environment:
       TZ: "Europe/Amsterdam"
-      KAART_GEO_DB: geo
-      KAART_NLGIS_DB: geo_nlgis
-      KAART_GEO_DB_HOST: host.docker.internal
-      KAART_GEO_DB_USER: browser
-      KAART_GEO_DB_PASSWORD: browsie
-      REST_ALLOWED_CLIENTS: '["127.0.0.1", "172.25.0.1", "172.24.0.1", "192.168.65.1"]'
+      KAART_GEO_DB: ${KAART_GEO_DB}
+      KAART_NLGIS_DB: ${KAART_NLGIS_DB}
+      KAART_GEO_DB_HOST: ${KAART_GEO_DB_HOST}
+      KAART_GEO_DB_USER: ${KAART_GEO_DB_USER}
+      KAART_GEO_DB_PASSWORD: ${KAART_GEO_DB_PASSWORD}
+      REST_ALLOWED_CLIENTS: ${REST_ALLOWED_CLIENTS}

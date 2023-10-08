@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45d26c4237fae0b8796489fca5cf90d2",
+    "content-hash": "4421f65f805aaf03503bae69ec873f5c",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -70,16 +70,16 @@
         },
         {
             "name": "meertensinstituut/kaart",
-            "version": "v3.1.1",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/meertensinstituut/kaart.git",
-                "reference": "caa9baefd762624a34b341db006c31dd176335e0"
+                "reference": "8b505fefe38a572e3454e79a5b512ac7f5213558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/meertensinstituut/kaart/zipball/caa9baefd762624a34b341db006c31dd176335e0",
-                "reference": "caa9baefd762624a34b341db006c31dd176335e0",
+                "url": "https://api.github.com/repos/meertensinstituut/kaart/zipball/8b505fefe38a572e3454e79a5b512ac7f5213558",
+                "reference": "8b505fefe38a572e3454e79a5b512ac7f5213558",
                 "shasum": ""
             },
             "require": {
@@ -123,10 +123,10 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/meertensinstituut/kaart/tree/v3.1.1",
+                "source": "https://github.com/meertensinstituut/kaart/tree/v3.1.2",
                 "issues": "https://github.com/meertensinstituut/kaart/issues"
             },
-            "time": "2023-10-05T12:24:49+00:00"
+            "time": "2023-10-05T13:44:13+00:00"
         },
         {
             "name": "pear/console_getopt",

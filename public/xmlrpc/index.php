@@ -245,7 +245,12 @@ function getPossibleAreas($msg)
  */
 function describeMethods2HTML()
 {
-    $client = new XML_RPC_Client($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME']);
+    if (isset($_SERVER['HTTP_X_FORWARDED_SCHEME'])) {
+        $scheme = $_SERVER['HTTP_X_FORWARDED_SCHEME'];
+    } else {
+        $scheme = $_SERVER['REQUEST_SCHEME'];
+    }
+    $client = new XML_RPC_Client($_SERVER['REQUEST_URI'], $scheme . '://' . $_SERVER['SERVER_NAME']);
     $client->setDebug(0);
     $msg = new XML_RPC_Message('system.describeMethods');
     $result = $client->send($msg);
