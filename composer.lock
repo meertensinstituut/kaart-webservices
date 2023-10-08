@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4421f65f805aaf03503bae69ec873f5c",
+    "content-hash": "3650a011f01df4fb9763f7bd13b605f0",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -70,16 +70,16 @@
         },
         {
             "name": "meertensinstituut/kaart",
-            "version": "v3.1.2",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/meertensinstituut/kaart.git",
-                "reference": "8b505fefe38a572e3454e79a5b512ac7f5213558"
+                "reference": "7c17fecbd3c639553f33555fd9751489f4637fe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/meertensinstituut/kaart/zipball/8b505fefe38a572e3454e79a5b512ac7f5213558",
-                "reference": "8b505fefe38a572e3454e79a5b512ac7f5213558",
+                "url": "https://api.github.com/repos/meertensinstituut/kaart/zipball/7c17fecbd3c639553f33555fd9751489f4637fe1",
+                "reference": "7c17fecbd3c639553f33555fd9751489f4637fe1",
                 "shasum": ""
             },
             "require": {
@@ -112,21 +112,50 @@
                     "Image_": "lib/Image_Color",
                     "XML_SVG": "lib/XML_SVG"
                 },
+                "classmap": [
+                    "lib/REST.php"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/meertensinstituut/kaart/tree/v3.1.3",
+                "issues": "https://github.com/meertensinstituut/kaart/issues"
+            },
+            "time": "2023-10-08T12:52:16+00:00"
+        },
+        {
+            "name": "meertensinstituut/xml-rpc",
+            "version": "v1.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/meertensinstituut/xml-rpc.git",
+                "reference": "55fd8923eec70e6d84fc8ff8c9ba5badf9887851"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/meertensinstituut/xml-rpc/zipball/55fd8923eec70e6d84fc8ff8c9ba5badf9887851",
+                "reference": "55fd8923eec70e6d84fc8ff8c9ba5badf9887851",
+                "shasum": ""
+            },
+            "require": {
+                "pear/pear-core-minimal": "^1.10.1",
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
                 "files": [
                     "lib/XML_RPC/XML/constants_globals_functions.php",
                     "lib/XML_RPC/XML/system_describeMethods.php"
                 ],
                 "classmap": [
                     "lib/XML_RPC/XML",
-                    "lib/XML_RPC/XML/RPC",
-                    "lib/REST.php"
+                    "lib/XML_RPC/XML/RPC"
                 ]
             },
             "support": {
-                "source": "https://github.com/meertensinstituut/kaart/tree/v3.1.2",
-                "issues": "https://github.com/meertensinstituut/kaart/issues"
+                "source": "https://github.com/meertensinstituut/xml-rpc/tree/v1.5.5",
+                "issues": "https://github.com/meertensinstituut/xml-rpc/issues"
             },
-            "time": "2023-10-05T13:44:13+00:00"
+            "time": "2023-10-08T12:36:52+00:00"
         },
         {
             "name": "pear/console_getopt",
