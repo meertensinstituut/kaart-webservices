@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3650a011f01df4fb9763f7bd13b605f0",
+    "content-hash": "7c662bd9c951de8633c88795129c6236",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -102,38 +102,39 @@
             },
             "type": "library",
             "autoload": {
+                "psr-0": {
+                    "Image_": "lib/Image_Color",
+                    "XML_SVG": "lib/XML_SVG"
+                },
                 "psr-4": {
                     "Meertens\\Kaart\\": [
                         "src/",
                         "test/"
                     ]
                 },
-                "psr-0": {
-                    "Image_": "lib/Image_Color",
-                    "XML_SVG": "lib/XML_SVG"
-                },
                 "classmap": [
                     "lib/REST.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "support": {
-                "source": "https://github.com/meertensinstituut/kaart/tree/v3.1.3",
-                "issues": "https://github.com/meertensinstituut/kaart/issues"
+                "issues": "https://github.com/meertensinstituut/kaart/issues",
+                "source": "https://github.com/meertensinstituut/kaart/tree/v3.1.3"
             },
             "time": "2023-10-08T12:52:16+00:00"
         },
         {
             "name": "meertensinstituut/xml-rpc",
-            "version": "v1.5.5",
+            "version": "v1.5.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/meertensinstituut/xml-rpc.git",
-                "reference": "55fd8923eec70e6d84fc8ff8c9ba5badf9887851"
+                "reference": "a0094da6fdeba8a63912cd934aa09de58c4ed46e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/meertensinstituut/xml-rpc/zipball/55fd8923eec70e6d84fc8ff8c9ba5badf9887851",
-                "reference": "55fd8923eec70e6d84fc8ff8c9ba5badf9887851",
+                "url": "https://api.github.com/repos/meertensinstituut/xml-rpc/zipball/a0094da6fdeba8a63912cd934aa09de58c4ed46e",
+                "reference": "a0094da6fdeba8a63912cd934aa09de58c4ed46e",
                 "shasum": ""
             },
             "require": {
@@ -151,11 +152,16 @@
                     "lib/XML_RPC/XML/RPC"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "PHP-3.01"
+            ],
+            "description": "PHP 8-compatible version of PEAR XML_RPC library",
             "support": {
-                "source": "https://github.com/meertensinstituut/xml-rpc/tree/v1.5.5",
-                "issues": "https://github.com/meertensinstituut/xml-rpc/issues"
+                "issues": "https://github.com/meertensinstituut/xml-rpc/issues",
+                "source": "https://github.com/meertensinstituut/xml-rpc/tree/v1.5.5.1"
             },
-            "time": "2023-10-08T12:36:52+00:00"
+            "time": "2023-10-11T06:54:57+00:00"
         },
         {
             "name": "pear/console_getopt",
