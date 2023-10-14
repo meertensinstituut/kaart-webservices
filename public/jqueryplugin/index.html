@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+	    #municipalities {display: none;}
+	    .url-value {margin-left: 10px; size: small; color: gray;}
+	    #proxyurl-value-hidden { display: none; }
+	</style>
+    <script type="text/javascript" src="lib/jquery-1.7.2.js"></script>
+    <!--[if lt IE 8]>
+  <script type="text/javascript" src="lib/json2.js"></script>
+  <![endif]-->
+    <script type="text/javascript" src="lib/jquery.md5.js"></script>
+	<script type="text/javascript" src="lib/jquery.to_json.js"></script>
+	<script type="text/javascript" src="lib/plugin_demo_helper.js"></script>
+	<script type="text/javascript" src="jquery.kaart.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+        var url = window.location.protocol + "//" + window.location.host + "/rest/";
+//         var cacheurl = "http://testprojecten.dev/kaart/distribution/cache/";
+//         var proxyurl = "http://testprojecten.dev/kaart/distribution/proxy/ba-simple-proxy.php";
+
+        if (typeof cacheurl === 'undefined') {
+            var cacheurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            cacheurl = cacheurl.replace("jqueryplugin", "cache");
+        }
+        if (typeof proxyurl === 'undefined') {
+            var proxyurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            proxyurl = proxyurl.replace("jqueryplugin/", "proxy/ba-simple-proxy.php");
+        }
+
+        $('#url').val(url);
+        $('#cacheurl-value').html(cacheurl);
+        $('#proxyurl-value').html(proxyurl + " &rarr; " + url);       
+        $('#proxyurl-value-hidden').html(proxyurl);       
+
+        $('#type').change(function() {
+            if ($(this).val() === 'municipalities') {
+                $('#dutchlanguagearea').hide();
+                $('#municipalities').show();
+            } else {
+                $('#dutchlanguagearea').show();
+                $('#municipalities').hide();            
+            }
+        });
+
+        $('#kaartform').submit( function(e) {
+            e.preventDefault ? e.preventDefault() : e.returnValue = false;
+            var json = $('#kaartform').toJSON();
+            json.data = pluginhelper.getData(json);
+            if ($('#cacheurl').is(':checked')) {
+                json.cacheurl = $('#cacheurl-value').html();
+            } else {
+                json.cacheurl = null;
+            }
+            if ($('#proxyurl').is(':checked')) {
+                json.proxyurl = $('#proxyurl-value-hidden').html();
+            } else {
+                json.proxyurl = null;
+            }
+            if ($('#imagemap').val() === "1") {
+                json.imagemap = 1;
+            }
+            json.async = false;
+            if ($('#action').val() === 'inject') {
+                $('#kaart').kaart(json);
+ //               $('#source').html(($("#kaart img").attr("src")).replace(/\//g,'\\/'));
+            } else {
+                $('#kaart').text($.fn.kaart('retrieve', json));
+            }
+            return false;
+        });
+	});
+	</script>
+	<title>Kaart jQuery plugin</title>
+</head>
+<body>
+<form action="index.html" method="get" id="kaartform">
+<input type="hidden" name="url" id="url" value="" />
+action: <select name="action" id="action">
+<option value="inject">inject</option>
+<option value="retrieve">retrieve</option>
+</select>
+type: <select name="type" id="type">
+<option value="dutchlanguagearea">dutchlanguagearea</option>
+<option value="municipalities">municipalities</option>
+</select>
+width: <input type="text" size="5" name="width" id="width" value="500" />
+title: <input type="text" name="title" size="30" id="title" />
+format: <select name="format" id="format">
+<option value="png">png</option>
+<option value="gif">gif</option>
+<option value="jpeg">jpeg</option>
+<option value="svg">svg</option>
+<option value="kml">kml</option>
+</select>
+imagemap: <select name="imagemap" id="imagemap">
+<option value="0">0</option>
+<option value="1">1</option>
+</select>
+<!--<div id="cacheurl-wrapper" style="margin-top:10px;">-->
+<!--<input type="checkbox" name="cacheurl" id="cacheurl" value="on" /> <label for="cacheurl">cache requested maps</label>-->
+<!--<span id="cacheurl-value" class="url-value"></span>-->
+<!--</div>-->
+<!--<div id="proxyurl-wrapper">-->
+<!--<input type="checkbox" name="proxyurl" id="proxyurl" value="on" /> <label for="cacheurl">use local proxy</label>-->
+<!--<span id="proxyurl-value" class="url-value"></span><span id="proxyurl-value-hidden"></span>-->
+<!--</div>-->
+<!--<div style="margin-top:10px;">Edit the source of this document to set the values of Kaart rest url, cache url and proxy url.</div>-->
+<hr />
+<div id="dutchlanguagearea">
+<div id="parts">
+parts: <input type="checkbox" name="parts[]" id="nederland" value="nederland" /> <label for="nederland">nederland</label>
+<input type="checkbox" name="parts[]" id="vlaanderen" value="vlaanderen" /> <label for="vlaanderen">vlaanderen</label>
+</div>
+<textarea name="data[0]" id="data[0]">
+E038p
+E041p
+E056p
+E060p
+E064p
+E068a
+E075p
+E085p
+E093p
+E167p
+</textarea>
+<textarea name="data[1]" id="data[1]">
+L271p
+L290p
+L331p
+L375p
+L382p
+L383p
+M001p
+M006p
+M015p
+Q021p
+Q031p
+Q101p
+Q197p
+Q198b
+Q199p
+</textarea>
+</div>
+<div id="municipalities">
+<textarea name="municipalitycodes[0]" id="municipalitycodes[0]">
+g_0432
+g_0420
+g_0448
+g_0476
+g_0373
+g_0400
+g_0366
+g_0463
+g_0462
+</textarea>
+<textarea name="municipalitycodes[1]" id="municipalitycodes[1]">
+g_0576
+g_0579
+g_0580
+g_0584
+g_0585
+g_0588
+g_0589
+g_0590
+g_0595
+g_0597
+g_0599
+g_0600
+g_0603
+g_0606
+g_0608
+g_0610
+g_0611
+</textarea>
+
+</div>
+<hr />
+<div id="submitwrapper">
+<input type="submit" value="submit" />
+</div>
+</form>
+<hr />
+<p id="kaart"></p>
+<p id="source"></p>
+</body>
+</html>
