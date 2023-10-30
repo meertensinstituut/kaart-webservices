@@ -1,6 +1,7 @@
 {
   "name": "meertensinstituut/kaart-webservices",
   "require": {
+    "smarty/smarty": "^4.3",
     "meertensinstituut/kaart": "^3.1",
     "meertensinstituut/xml-rpc": "^1.5.5",
     "ext-curl": "*"
